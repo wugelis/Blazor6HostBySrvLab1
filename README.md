@@ -1,5 +1,5 @@
-# Blazor 6 ªº AppSettings ´ú¸Õµ{¦¡
+ï»¿# Blazor 6 çš„ AppSettings æ¸¬è©¦ç¨‹å¼
 
-## 1. ´ú¸Õ¤º´O¸ê·½ appsetting.json
+## 1. æ¸¬è©¦å…§åµŒè³‡æº appsetting.json
 
-## 2. ConfigureServices Åª¨ú»·ºİ¸ê·½
+## 2. ConfigureServices è®€å–é ç«¯è³‡æº
