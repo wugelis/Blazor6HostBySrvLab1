@@ -1,0 +1,39 @@
+﻿@inject IConfiguration Configuration
+@page "/ConfigureMASM"
+@using System.Reflection
+
+<h3>ConfigureMASM</h3>
+
+<div>
+    <p>
+        This is a simple example of how to use configuration in Blazor.
+    </p>
+    <p>
+        <label>登入頁面是：@_homeEMail</label>
+
+    </p>
+</div>
+
+@code {
+    private string _homeEMail;
+
+    protected override Task OnInitializedAsync()
+    {
+        string fileName = "Blazor6HostBySrvLab1.Client.appsettings.json";
+        var stream = Assembly.GetExecutingAssembly()
+            .GetManifestResourceStream(fileName);
+
+        var configuration = new ConfigurationBuilder()
+            .AddJsonStream(stream)
+            .Build();
+
+        IConfigurationSection appSettings
+            = configuration.GetSection("appSettings");
+
+        _homeEMail = appSettings["AdminEMail"];
+        //_homeEMail = Configuration.GetSection("AppSettings").GetValue<string>("AdminEMail")!;
+
+        return base.OnInitializedAsync();
+    }
+
+}
